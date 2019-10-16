@@ -1,0 +1,52 @@
+print("this is a song name")
+secret="despacito"
+no=[]
+congo=len(secret)
+for list in range(0,len(secret)):
+    no.append('_')
+
+all_letters = "a b c d e f g h i j k l m n o p  q r s t u v w x y z "
+i=0
+turns=2*len(secret)
+score=turns
+print( "NO OF TURNS YOU HAVE ARE " , turns)
+while i <= 2* len(secret) and congo >0:
+    word = input("choose your word : ")
+    if len(word)<2 and word != " ":
+
+        if word in all_letters:
+            word.lower()
+            if word in secret :
+                ins = -1
+                all_letters= all_letters.replace(word,'')
+                for s in range(0,len(secret)):
+                    ins+=1
+                    if word == secret[s] :
+                        no[ins]=word
+                        congo-=1
+            else:
+                all_letters = all_letters.replace(word, '')
+                print(all_letters)
+                print("sorry try another word")
+                turns-=1
+                print("you have",turns)
+        else :
+
+            print("TRY ANOTHER WORD ! you have already use that one")
+
+    else:
+
+        print("ERROR TRY ANOTHER WORD ! you have already use that one")
+    print(no)
+    i = i + 1
+    print(all_letters)
+if congo ==0:
+    print("woahh ! you won ")
+    final=score*turns
+    len(secret)
+    print("your score is",final)
+
+else:
+    print("oops you loose")
+
+
