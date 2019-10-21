@@ -1,0 +1,11 @@
+#The dictionary is basically key and value pair in python.
+a={1:"India",2:"Australia",3:"USA"}
+#Here in a 1,2,3 are key while India,Australia and USA are values.
+print(a[1]) #Prints India
+#The key must be unique while values may even contain a list of other values.
+#Ex:
+a={1:["India","Australia","USA"],2:["Pakistan","Spain","Italy"]
+print(a[1][2])#Prints USA
+#The datatype of key and value can be anything as long as key is unique.
+
+
