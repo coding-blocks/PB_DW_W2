@@ -1,0 +1,11 @@
+import heapq
+a = [11,22,31,4] 
+heapq.heapify(a) 
+print(heapq.heappop(a)) #4
+print(heapq.heappop(a)) #11
+print(heapq.heappop(a)) #22
+print(heapq.heappop(a)) #31
+print(a) #Empty
+
+#heapq by default makes use of min heap concept. heapify builds heap, heappop pops smallest element from heap, heappush(a,4) pushes 4 in heap.
+#For making use of max heap simply multiply all the elements with -1 and then use min heap concept and then change the sign of the value as an when required.
