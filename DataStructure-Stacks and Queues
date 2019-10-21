@@ -1,0 +1,20 @@
+#Stacks are basically Last in First Out.
+
+stack=[1,2,3,4]
+stack.append(5)
+print(stack)  #[1,2,3,4,5]
+stack.pop() #Removes 5 which was Last added but removed first
+print(stack) #[1,2,3,4]
+
+
+import queue 
+L = queue.Queue(maxsize=4) 
+L.put(1)
+L.put(2)
+L.put(4)
+L.put(5)
+print(L.get()) #1
+print(L.get()) #2
+print(L.get()) #4
+print(L.get()) #5
+#As we can see the element that was Added First is removed First(FIFO)
