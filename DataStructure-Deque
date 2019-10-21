@@ -1,0 +1,14 @@
+#Deque is a DataStructure which can perform deletion and insertion from both ends(Stack+Queue)i.e LIFO,FIFO
+
+import collections 
+  
+a = collections.deque([1,2,3]) 
+print(a) #deque([1, 2, 3])
+a.append(4)
+print(a) #deque([1, 2, 3, 4])
+a.appendleft(-1)
+print(a) #deque([-1, 1, 2, 3, 4])
+a.pop()
+print(a) #deque([-1, 1, 2, 3])
+a.popleft()
+print(a) #deque([1, 2, 3])
