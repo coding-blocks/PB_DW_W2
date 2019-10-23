@@ -1,4 +1,2 @@
-Python Program for Sorting::
--quick sort
--merge sort
--selection sort
+username: aayushakrrana
+fullname: AAYUSH KUMAR RANA
