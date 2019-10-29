@@ -1,0 +1,29 @@
+Tree Traversal - Preorder:
+
+###Iteration###
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution:
+    def preorderTraversal(self, root: TreeNode) -> List[int]:
+        res,stack = [],[root]
+        while stack:
+            cur = stack.pop()
+            if cur:
+                res.append(cur.val)
+                stack.append(cur.right)
+                stack.append(cur.left)
+        return res
+        
+###Recursion###:
+
+class Solution:
+    def preorderTraversal(self, root: TreeNode) -> List[int]:
+        res =[]
+        if root:
+            res += [root.val]+self.preorderTraversal(root.left)+ self.preorderTraversal(root.right)
+        return res
