@@ -1,0 +1,35 @@
+Tree traversal - Inorder
+
+
+##Iteration##
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution:
+    def inorderTraversal(self, root: TreeNode) -> List[int]:
+        # left->root->right
+               
+        # creating a stack to keep track of visited nodes and value
+        stack=[(False,root)] # intializing it with False flag
+        res=[] # this stack will keep the result of traversal
+        while stack: # if stack exists
+            flag,val=stack.pop() # initializing the flag and val with the first element in the stack
+            print(flag,val)
+            if val:
+                if not flag: # if the node is not visited
+                    stack.append((False,val.right)) # set the flag as False and check the left value
+                    stack.append((True,val)) # set the flag as true and set the root value
+                    stack.append((False,val.left)) # set the flag as False and check the right value
+                else:
+                    # there can be a question that why we are appending the right node first , its because when we are reappending the orer will be left root right since it is a stack
+                    res.append(val.val) # if flag is true append it to the result list
+        return res
+
+##Recursion##
+if not root:
+            return []
+        else:
+            return self.inorderTraversal(root.left) + [root.val] + self.inorderTraversal(root.right)
