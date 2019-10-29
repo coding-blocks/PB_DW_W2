@@ -1,0 +1,22 @@
+
+#Level Order Tree Traversal
+class Solution:
+	def levelOrder(self, root: TreeNode) -> List[List[int]]:
+		if not root:
+			return 
+		track = [root]
+		stack = []
+		while (track!=[]):
+			temp = []
+			valtemp = []
+			for i in range(len(track)):
+				if track[i]:
+					temp.append(track[i].left)
+					temp.append(track[i].right)
+					valtemp.append(track[i].val)
+			track = temp
+			if valtemp==[]:
+				return stack
+			else:
+				stack.append(valtemp)
+		return stack
